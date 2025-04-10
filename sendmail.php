@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $email = htmlspecialchars($_POST['email']);
   $message = htmlspecialchars($_POST['message']);
 
-  $to = "youremail@example.com"; // Thay bằng email của bạn
+  $to = "nvtoan.1706@gmail.com"; // Thay bằng email của bạn
   $subject = "New Contact Message from Portfolio";
   $headers = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
 
