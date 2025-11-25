@@ -1,89 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ==========================================
+                  Box Icons
+    =========================================== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- ==========================================
+                  Custom CSS
+    =========================================== -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- ==========================================
+                  Breakpoint
+    =========================================== -->
+    <link rel="stylesheet" href="breakpoint.css" />
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <!-- ==========================================
+                    Header
+    =========================================== -->
+    <header class="header">
+      <a href="#" class="logo">REV<span>Dev.</span></a>
 
-  <!-- Header -->
-  <header class="bg-white shadow p-4 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">My Portfolio</h1>
-      <nav class="space-x-4">
-        <a href="#about" class="hover:text-blue-500">About</a>
-        <a href="#projects" class="hover:text-blue-500">Projects</a>
-        <a href="#contact" class="hover:text-blue-500">Contact</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <!-- Hero -->
-  <section class="text-center py-16 bg-blue-50">
-    <img src="logo.png" alt="Profile Photo" class="mx-auto rounded-full w-32 h-32 mb-4 shadow-md" />
-    <h2 class="text-3xl md:text-5xl font-bold mb-2">Hi, I'm [Your Name]</h2>
-    <p class="text-lg text-gray-700 max-w-xl mx-auto mb-4">
-      A passionate web developer who loves building clean and responsive websites.
-    </p>
-    <a href="your_cv.pdf" download class="inline-block mt-2 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-      📄 Download CV
-    </a>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="max-w-4xl mx-auto py-12 px-4">
-    <h3 class="text-2xl font-semibold mb-4">About Me</h3>
-    <p>
-      I'm a junior web developer with experience in HTML, CSS, JavaScript, and Tailwind CSS.
-      I enjoy learning new technologies and solving real-world problems through code.
-    </p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="bg-white py-12 px-4">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-2xl font-semibold mb-6">Projects</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-          <h4 class="text-xl font-bold mb-2">Project 1</h4>
-          <p class="text-gray-700 mb-2">A cool website I built using HTML, CSS, and Tailwind.</p>
-          <a href="#" class="text-blue-600 hover:underline">View project →</a>
+    <!-- ==========================================
+                  Home Section
+    =========================================== -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello, It's Me</h3>
+        <h1>Revangga</h1>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <div class="social-media">
+          <a href=""><i class="bx bxl-facebook"></i></a>
+          <a href=""><i class="bx bxl-twitter"></i></a>
+          <a href=""><i class="bx bxl-instagram-alt"></i></a>
+          <a href=""><i class="bx bxl-linkedin"></i></a>
         </div>
-        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transition">
-          <h4 class="text-xl font-bold mb-2">Project 2</h4>
-          <p class="text-gray-700 mb-2">Another great project for practicing responsive layout.</p>
-          <a href="#" class="text-blue-600 hover:underline">View project →</a>
+        <!-- add link for your CV into `href` -->
+        <a href="" class="btn">Download CV</a>
+      </div>
+
+      <div class="home-img">
+        <img src="assets/image/home1.png" alt="home" />
+      </div>
+    </section>
+
+    <!-- ==========================================
+                  About Section
+    =========================================== -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="assets/image/about1.png" alt="about" />
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <p>
+          Innovative Freelance Front-End Developer with 3+ Years at Upwork
+          Seeking New Challenges | Bachelor of Informatics Grad | Proficient in
+          HTML, CSS, JS, PHP, MongoDB, Express.js, React, Node.js | Eager to
+          Bring Problem-Solving and Critical Thinking Skills to Your Team.
+        </p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                  Services Section
+    =========================================== -->
+    <section class="services" id="services">
+      <h2 class="heading">Our <span>Services</span></h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Front End</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet
+            atque voluptate saepe magni aspernatur id nemo quasi quibusdam
+            ratione.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-paint"></i>
+          <h3>Graphic Design</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            fugiat quaerat vero magnam? Sunt exercitationem atque distinctio
+            deleniti culpa minus.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bx-data"></i>
+          <h3>Back End</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet
+            atque voluptate saepe magni aspernatur id nemo quasi quibusdam
+            ratione.
+          </p>
+
+          <a href="#" class="btn">Read More</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="max-w-4xl mx-auto py-12 px-4">
-    <h3 class="text-2xl font-semibold mb-4">Contact Me</h3>
-    <p class="mb-4">Send me a message using the form below:</p>
-    <form action="https://formsubmit.co/nvtoan.1706@gmail.com" method="POST" class="space-y-4">
-      <input type="hidden" name="_captcha" value="false">
-      <div>
-        <input type="text" name="name" placeholder="Your name" required class="w-full p-3 border rounded">
-      </div>
-      <div>
-        <input type="email" name="email" placeholder="Your email" required class="w-full p-3 border rounded">
-      </div>
-      <div>
-        <textarea name="message" placeholder="Your message" rows="5" required class="w-full p-3 border rounded"></textarea>
-      </div>
-      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
-    </form>
-  </section>
+    <!-- ==========================================
+                  Portfolio Section
+    =========================================== -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Project</span></h2>
 
-  <!-- Footer -->
-  <footer class="text-center p-4 bg-gray-200 mt-12">
-    © 2025 [2Ton CICT]. All rights reserved.
-  </footer>
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="assets/image/img2.png" alt="portfolio" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Provident, nihil.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
 
-</body>
+        <div class="portfolio-box">
+          <img src="assets/image/img2.png" alt="portfolio" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit,
+              dignissimos.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="assets/image/img4.png" alt="portfolio" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusamus, sequi!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="assets/image/img4.png" alt="portfolio" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
+              nulla?
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="assets/image/img6.png" alt="portfolio" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
+              cum!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="assets/image/img6.png" alt="portfolio" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ut!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                  Contact Section
+    =========================================== -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email Address" />
+        </div>
+
+        <div class="input-box">
+          <input type="number" placeholder="Mobile Number" />
+          <input type="text" placeholder="Email Subject" />
+        </div>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+        ></textarea>
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
+    </section>
+
+    <!-- ==========================================
+                    Footer
+    =========================================== -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 by Callmerev | All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+                  Scroll Reveal
+    =========================================== -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ==========================================
+                   Typed Js
+    =========================================== -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- ==========================================
+                  Custom Js
+    =========================================== -->
+    <script src="main.js"></script>
+  </body>
 </html>
