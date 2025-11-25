@@ -4,37 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- ==========================================
-                  Box Icons
-    =========================================== -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <!-- ==========================================
-                  Custom CSS
-    =========================================== -->
+    <link rel="icon" href="assets/icon.jpg" type="image/jpg">
+    <title>Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
-    <!-- ==========================================
-                  Breakpoint
-    =========================================== -->
     <link rel="stylesheet" href="breakpoint.css" />
-    <title>My Portfolio</title>
   </head>
   <body>
     <!-- ==========================================
                     Header
     =========================================== -->
     <header class="header">
-      <a href="#" class="logo">REV<span>Dev.</span></a>
+      <a href="#" class="logo">HI<span>Ton.</span></a>
 
       <i class="bx bx-menu" id="menu-icon"></i>
 
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Service</a>
+        <a href="#project">Project</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -45,16 +34,16 @@
     <section class="home" id="home">
       <div class="home-content">
         <h3>Hello, It's Me</h3>
-        <h1>Revangga</h1>
-        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <h1>Van Toan (hiton)</h1>
+        <h3>and I'm a <span class="multiple-text"></span></h3>
         <div class="social-media">
-          <a href=""><i class="bx bxl-facebook"></i></a>
-          <a href=""><i class="bx bxl-twitter"></i></a>
-          <a href=""><i class="bx bxl-instagram-alt"></i></a>
-          <a href=""><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.facebook.com/nvtoancitctu"><i class="bx bxl-facebook"></i></a>
+          <a href="https://x.com/hiton2025wg"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.instagram.com/hiton.cit"><i class="bx bxl-instagram-alt"></i></a>
+          <a href="https://www.linkedin.com/in/toan-nguyen-799a2034a"><i class="bx bxl-linkedin"></i></a>
         </div>
         <!-- add link for your CV into `href` -->
-        <a href="" class="btn">Download CV</a>
+        <a href="assets/nguyen-van-toan.pdf" class="btn">Download CV</a>
       </div>
 
       <div class="home-img">
@@ -73,12 +62,31 @@
       <div class="about-content">
         <h2 class="heading">About <span>Me</span></h2>
         <p>
-          Innovative Freelance Front-End Developer with 3+ Years at Upwork
-          Seeking New Challenges | Bachelor of Informatics Grad | Proficient in
-          HTML, CSS, JS, PHP, MongoDB, Express.js, React, Node.js | Eager to
-          Bring Problem-Solving and Critical Thinking Skills to Your Team.
+          Web Developer from Vietnam specializing in PHP and Laravel, with strong front-end skills using Tailwind CSS.  
+          Passionate about building modern, responsive websites and applying problem-solving and critical thinking skills to deliver high-quality solutions.
         </p>
-        <a href="#" class="btn">Read More</a>
+
+        <!-- Personal Info -->
+        <div class="personal-info">
+          <div class="info-item">
+            <strong>Gender:</strong> Male
+          </div>
+          <div class="info-item">
+            <strong>Phone:</strong> 0932 822 075
+          </div>
+          <div class="info-item">
+            <strong>Email:</strong> nvtoan.1706@gmail.com
+          </div>
+          <div class="info-item">
+            <strong>Date of Birth:</strong> 17/06/2003
+          </div>
+          <div class="info-item">
+            <strong>School:</strong> Can Tho University
+          </div>
+          <div class="info-item">
+            <strong>GPA:</strong> 3.54/4.0
+          </div>
+        </div>
       </div>
     </section>
 
@@ -93,34 +101,27 @@
           <i class="bx bx-code-alt"></i>
           <h3>Front End</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet
-            atque voluptate saepe magni aspernatur id nemo quasi quibusdam
-            ratione.
+            Building modern, responsive, and interactive web interfaces using Tailwind CSS and JavaScript. 
+            Focused on clean design and seamless user experience.
           </p>
-          <a href="#" class="btn">Read More</a>
         </div>
 
         <div class="services-box">
           <i class="bx bxs-paint"></i>
-          <h3>Graphic Design</h3>
+          <h3>UI/UX Design</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            fugiat quaerat vero magnam? Sunt exercitationem atque distinctio
-            deleniti culpa minus.
+            Crafting user-friendly and visually appealing interfaces, ensuring intuitive navigation 
+            and engaging design for web applications.
           </p>
-          <a href="#" class="btn">Read More</a>
         </div>
 
         <div class="services-box">
           <i class="bx bx-data"></i>
           <h3>Back End</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet
-            atque voluptate saepe magni aspernatur id nemo quasi quibusdam
-            ratione.
+            Developing robust and scalable server-side applications with PHP and Laravel, 
+            integrating databases and APIs for efficient data management.
           </p>
-
-          <a href="#" class="btn">Read More</a>
         </div>
       </div>
     </section>
@@ -128,55 +129,51 @@
     <!-- ==========================================
                   Portfolio Section
     =========================================== -->
-    <section class="portfolio" id="portfolio">
+    <section class="portfolio" id="project">
       <h2 class="heading">Latest <span>Project</span></h2>
 
       <div class="portfolio-container">
         <div class="portfolio-box">
           <img src="assets/image/img2.png" alt="portfolio" />
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
+            <h4>PyZa.io</h4>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Provident, nihil.
+              Building a responsive and interactive e-commerce site with Laravel and PHP for PyZa.io.
             </p>
-            <a href="#"><i class="bx bx-link-external"></i></a>
+            <a href="https://github.com/nvtoancitctu/pyza.io"><i class="bx bxl-github"></i></a>
           </div>
         </div>
 
         <div class="portfolio-box">
-          <img src="assets/image/img2.png" alt="portfolio" />
+          <img src="assets/image/img3.png" alt="portfolio" />
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
+            <h4>Cafes</h4>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit,
-              dignissimos.
+              A Java Swing desktop application to efficiently manage cafe operations and inventory.
             </p>
-            <a href="#"><i class="bx bx-link-external"></i></a>
-          </div>
-        </div>
-
-        <div class="portfolio-box">
-          <img src="assets/image/img4.png" alt="portfolio" />
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Accusamus, sequi!
-            </p>
-            <a href="#"><i class="bx bx-link-external"></i></a>
+            <a href="https://github.com/nvtoancitctu/cafe-store-management"><i class="bx bxl-github"></i></a>
           </div>
         </div>
 
         <div class="portfolio-box">
           <img src="assets/image/img4.png" alt="portfolio" />
           <div class="portfolio-layer">
-            <h4>Web Design</h4>
+            <h4>TMExam.vn</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
-              nulla?
+              A web application for managing and taking online exams, with features for students and administrators.
             </p>
-            <a href="#"><i class="bx bx-link-external"></i></a>
+            <a href="https://github.com/nvtoancitctu/online-examination-system"><i class="bx bxl-github"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="assets/image/img5.png" alt="portfolio" />
+          <div class="portfolio-layer">
+            <h4>Ticket</h4>
+            <p>
+              A web-based ticket management system built with Node.js & React, enabling users to create, track tickets efficiently.
+            </p>
+            <a href="https://github.com/nvtoancitctu/ticket-web"><i class="bx bxl-github"></i></a>
           </div>
         </div>
 
@@ -185,21 +182,20 @@
           <div class="portfolio-layer">
             <h4>Web Design</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
-              cum!
+              A Laravel‑based e‑commerce web app for an online pizza store, secure checkout, and intuitive product management.
             </p>
-            <a href="#"><i class="bx bx-link-external"></i></a>
+            <a href="https://github.com/nvtoancitctu/lovershut-pizza-store"><i class="bx bxl-github"></i></a>
           </div>
         </div>
 
         <div class="portfolio-box">
-          <img src="assets/image/img6.png" alt="portfolio" />
+          <img src="assets/image/img8.png" alt="portfolio" />
           <div class="portfolio-layer">
             <h4>Web Design</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ut!
+              A Laravel‑based e‑commerce web app for an online pizza store, secure checkout, and intuitive product management.
             </p>
-            <a href="#"><i class="bx bx-link-external"></i></a>
+            <a href="https://github.com/nvtoancitctu/lovershub-pizza-store"><i class="bx bxl-github"></i></a>
           </div>
         </div>
       </div>
@@ -237,7 +233,7 @@
     =========================================== -->
     <footer class="footer">
       <div class="footer-text">
-        <p>Copyright &copy; 2024 by Callmerev | All Rights Reserved.</p>
+        <p>Copyright &copy; 2024 by HiTon (nvtoancitctu) - All Rights Reserved.</p>
       </div>
 
       <div class="footer-iconTop">
