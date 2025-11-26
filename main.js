@@ -73,3 +73,61 @@ const typed = new Typed(".multiple-text", {
   backDelay: 1000,
   loop: true,
 });
+
+/* ===================== 
+     Animate on scroll
+  ==================== */
+  const scrollElements = document.querySelectorAll('.animate-on-scroll');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  scrollElements.forEach((el) => observer.observe(el));
+  
+/* ===================== 
+    Partners Slider 
+====================== */
+function initSlider() {
+    const container = document.querySelector('.partners-container');
+    const boxes = document.querySelectorAll('.partner-box');
+    const btnNext = document.querySelector('.btn-next');
+    const btnPrev = document.querySelector('.btn-prev');
+    let index = 0;
+
+    function getVisibleItems() {
+        const containerWidth = document.querySelector('.partners-slider').offsetWidth;
+        const itemWidth = boxes[0].offsetWidth + parseInt(getComputedStyle(container).gap);
+        return Math.floor(containerWidth / itemWidth);
+    }
+
+    function updateSlider() {
+        const itemWidth = boxes[0].getBoundingClientRect().width + parseInt(getComputedStyle(container).gap);
+        container.style.transform = `translateX(-${index * itemWidth}px)`;
+    }
+
+    btnNext.onclick = () => {
+        const visibleItems = getVisibleItems();
+        index++;
+        if (index > boxes.length - visibleItems - 1) index = 0;
+        updateSlider();
+    };
+
+    btnPrev.onclick = () => {
+        index--;
+        if (index < 0) index = boxes.length - getVisibleItems() - 1;
+        updateSlider();
+    };
+
+    window.addEventListener('resize', updateSlider);
+    updateSlider();
+}
+
+initSlider();
