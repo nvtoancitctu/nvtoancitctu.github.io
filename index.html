@@ -1,320 +1,509 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/icon.jpg" type="image/jpg">
-    <title>Portfolio</title>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="breakpoint.css" />
-  </head>
-  <body>
-    <!-- ==========================================
-                    Header
-    =========================================== -->
-    <header class="header">
-      <a href="#" class="logo">HI<span>Ton.</span></a>
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
 
-      <i class="bx bx-menu" id="menu-icon"></i>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Boxicons -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-      <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Service</a>
-        <a href="#project">Project</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#6366f1",
+                            secondary: "#4f46e5",
+                            dark: "#0f172a",
+                            light: "#f8fafc",
+                        },
+                        fontFamily: {
+                            sans: ["Inter", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .glass {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .active-nav {
+                color: #6366f1;
+                border-bottom: 2px solid #6366f1;
+            }
+            .text-gradient {
+                background: linear-gradient(to right, #818cf8, #c084fc);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            section {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+        </style>
+    </head>
 
-    <!-- ==========================================
-                  Home Section
-    =========================================== -->
-    <section class="home" id="home">
-      <div class="home-content">
-        <h3>Hello, It's Me</h3>
-        <h1>Van Toan (hiton)</h1>
-        <h3>and I'm a <span class="multiple-text"></span></h3>
-        <div class="social-media">
-          <a href="https://www.facebook.com/nvtoancitctu"><i class="bx bxl-facebook"></i></a>
-          <a href="https://x.com/hiton2025wg"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.instagram.com/hiton.cit"><i class="bx bxl-instagram-alt"></i></a>
-          <a href="https://www.linkedin.com/in/toan-nguyen-799a2034a"><i class="bx bxl-linkedin"></i></a>
-        </div>
-        <!-- add link for your CV into `href` -->
-        <a href="assets/nguyen-van-toan.pdf" class="btn">Download CV</a>
-      </div>
+    <body class="bg-dark text-slate-300 font-sans selection:bg-primary selection:text-white">
+        <!-- Header / Navbar -->
+        <header class="fixed w-full top-0 z-50 transition-all duration-300 glass border-b border-white/5" id="header">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white tracking-tighter">
+                    hi
+                    <span class="text-primary">Ton.</span>
+                </a>
 
-      <div class="home-img">
-        <img src="assets/image/home1.png" alt="home" />
-      </div>
-    </section>
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                </nav>
 
-    <!-- ==========================================
-                  About Section
-    =========================================== -->
-    <section class="about" id="about">
-      <div class="about-img">
-        <img src="assets/image/about1.png" alt="about" />
-      </div>
-
-      <div class="about-content">
-        <h2 class="heading">About <span>Me</span></h2>
-        <p>
-          Web Developer from Vietnam specializing in PHP and Laravel, with strong front-end skills using Tailwind CSS.  
-          Passionate about building modern, responsive websites and applying problem-solving and critical thinking skills to deliver high-quality solutions.
-        </p>
-
-        <!-- Personal Info -->
-        <div class="personal-info">
-          <div class="info-item">
-            <strong>Gender:</strong> Male
-          </div>
-          <div class="info-item">
-            <strong>Phone:</strong> 0932 822 075
-          </div>
-          <div class="info-item">
-            <strong>Email:</strong> nvtoan.1706@gmail.com
-          </div>
-          <div class="info-item">
-            <strong>Date of Birth:</strong> 17/06/2003
-          </div>
-          <div class="info-item">
-            <strong>School:</strong> Can Tho University
-          </div>
-          <div class="info-item">
-            <strong>GPA:</strong> 3.54/4.0
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-                  Services Section
-    =========================================== -->
-    <section class="services" id="services">
-      <h2 class="heading">Our <span>Services</span></h2>
-
-      <div class="services-container">
-        <div class="services-box">
-          <i class="bx bx-code-alt"></i>
-          <h3>Front End</h3>
-          <p>
-            Building modern, responsive, and interactive web interfaces using Tailwind CSS and JavaScript. 
-            Focused on clean design and seamless user experience.
-          </p>
-        </div>
-
-        <div class="services-box">
-          <i class="bx bxs-paint"></i>
-          <h3>UI/UX Design</h3>
-          <p>
-            Crafting user-friendly and visually appealing interfaces, ensuring intuitive navigation 
-            and engaging design for web applications.
-          </p>
-        </div>
-
-        <div class="services-box">
-          <i class="bx bx-data"></i>
-          <h3>Back End</h3>
-          <p>
-            Developing robust and scalable server-side applications with PHP and Laravel, 
-            integrating databases and APIs for efficient data management.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-             Portfolio Section : Projects
-    =========================================== -->
-    <section class="portfolio" id="project">
-      <h2 class="heading">Latest <span>Projects</span></h2>
-
-      <div class="portfolio-wrapper">
-
-        <div class="project-card animate-on-scroll from-right">
-          <img src="assets/image/img2.png" alt="PyZa.io" />
-          <div class="project-info">
-            <h4>PyZa.io</h4>
-            <p>Responsive ecommerce platform with Laravel & PHP.</p>
-            <a href="https://github.com/nvtoancitctu/pyza.io" target="_blank" class="project-btn">
-              <i class="bx bxl-github"></i> View Repo
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card animate-on-scroll from-left">
-          <img src="assets/image/img3.png" alt="Cafe Store Management" />
-          <div class="project-info">
-            <h4>Cafes</h4>
-            <p>Java Swing desktop app for cafe inventory & billing.</p>
-            <a href="https://github.com/nvtoancitctu/cafe-store-management" target="_blank" class="project-btn">
-              <i class="bx bxl-github"></i> View Repo
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card animate-on-scroll from-top">
-          <img src="assets/image/img4.png" alt="TMExam.vn" />
-          <div class="project-info">
-            <h4>TMExam.vn</h4>
-            <p>Online examination web platform for students & admins.</p>
-            <a href="https://github.com/nvtoancitctu/online-examination-system" target="_blank" class="project-btn">
-              <i class="bx bxl-github"></i> View Repo
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card animate-on-scroll from-bottom">
-          <img src="assets/image/img5.png" alt="Ticket System" />
-          <div class="project-info">
-            <h4>Ticket</h4>
-            <p>Ticket tracking system with Node.js & React.</p>
-            <a href="https://github.com/nvtoancitctu/ticket-web" target="_blank" class="project-btn">
-              <i class="bx bxl-github"></i> View Repo
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card animate-on-scroll from-left">
-          <img src="assets/image/img6.png" alt="Pizza Store" />
-          <div class="project-info">
-            <h4>Web Design</h4>
-            <p>Laravel ecommerce pizza store with secure checkout.</p>
-            <a href="https://github.com/nvtoancitctu/lovershut-pizza-store" target="_blank" class="project-btn">
-              <i class="bx bxl-github"></i> View Repo
-            </a>
-          </div>
-        </div>
-
-        <!-- Item thứ 6: nút Read More -->
-        <div class="read-more-box">
-          <a href="https://github.com/nvtoancitctu" target="_blank" class="read-more-btn">
-            Read more...
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==========================================
-                Partners Section
-    =========================================== -->
-   <section class="partners" id="partners">
-      <h2 class="heading">GitHub <span>Partners</span></h2>
-
-      <div class="partners-wrapper">
-
-        <!-- Prev Button -->
-        <button class="btn-prev"><i class="bx bx-chevron-left"></i></button>
-
-        <div class="partners-slider">
-          <div class="partners-container">
-
-            <!-- 1 -->
-            <div class="partner-box">
-              <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="">
-              <h4>GitHub</h4>
-              <p>Open source platform</p>
-              <a href="https://github.com" target="_blank">@github</a>
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="hidden md:block bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full transition-all text-sm font-semibold">Hire Me</a>
+                    <button id="menu-btn" class="md:hidden text-3xl text-white">
+                        <i class="bx bx-menu"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- 2 -->
-            <div class="partner-box">
-              <img src="https://avatars.githubusercontent.com/u/958072?s=200&v=4" alt="">
-              <h4>Laravel</h4>
-              <p>PHP Framework</p>
-              <a href="https://github.com/laravel" target="_blank">@laravel</a>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-dark/95 absolute w-full left-0 border-b border-white/5 px-6 py-6 flex flex-col space-y-4">
+                <a href="#home" class="mobile-link">Home</a>
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#skills" class="mobile-link">Skills</a>
+                <a href="#projects" class="mobile-link">Projects</a>
+                <a href="#contact" class="mobile-link">Contact</a>
             </div>
+        </header>
 
-            <!-- 3 -->
-            <div class="partner-box">
-              <img src="https://avatars.githubusercontent.com/u/67109815?s=200&v=4" alt="">
-              <h4>Tailwind Labs</h4>
-              <p>Utility-first CSS framework</p>
-              <a href="https://github.com/tailwindlabs/tailwindcss" target="_blank">@tailwindcss</a>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 mt-10">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px]"></div>
+
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left">
+                    <h3 class="text-primary font-semibold text-lg mb-2">Xin chào, tôi là</h3>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">Evan T.Nguyen</h1>
+                    <h2 class="text-2xl md:text-3xl font-medium mb-6">
+                        Tôi là
+                        <span id="typed-text" class="text-gradient"></span>
+                    </h2>
+                    <p class="text-slate-400 max-w-lg mb-8 text-lg leading-relaxed">
+                        Lập trình viên phát triển Web tại Việt Nam với thế mạnh về Laravel & Tailwind CSS. Tôi tập trung vào việc tạo ra các giải pháp phần mềm tối ưu, có khả năng mở rộng và trải
+                        nghiệm người dùng tinh tế.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-xl font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/25">
+                            Xem dự án
+                        </a>
+                        <div class="flex items-center space-x-4 px-4 text-2xl">
+                            <a href="https://github.com/nvtoancitctu" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-github"></i></a>
+                            <a href="https://linkedin.com/in/toan-nguyen-799a2034a" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-linkedin"></i></a>
+                            <a href="https://www.facebook.com/nvtoancitctu" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal-right flex justify-center">
+                    <div class="relative w-72 h-72 md:w-96 md:h-96">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-purple-500 rounded-3xl rotate-6 opacity-20"></div>
+                        <img
+                            src="assets/image/home1.png"
+                            alt="Profile"
+                            class="relative z-10 w-full h-full object-cover rounded-3xl border border-white/10 shadow-2xl glass"
+                        />
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- 4 -->
-            <div class="partner-box">
-              <img src="https://avatars.githubusercontent.com/u/184798105?v=4" alt="">
-              <h4>Nguyen Chanh Dang</h4>
-              <p>Web Developer</p>
-              <a href="https://github.com/chanhdangcom" target="_blank">@chanhdangcom</a>
+        <!-- About Section -->
+        <section id="about" class="bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-top">
+                    <h2 class="text-4xl font-bold text-white mb-4">
+                        Về
+                        <span class="text-primary">Bản Thân</span>
+                    </h2>
+                    <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div class="space-y-6 reveal-left">
+                        <h3 class="text-2xl font-bold text-white">Xây dựng giải pháp từ tư duy logic</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Tôi hiện là sinh viên Đại học Cần Thơ với GPA ấn tượng 3.54/4.0. Không chỉ dừng lại ở lý thuyết, tôi đã dành hàng ngàn giờ để thực hành với PHP và Laravel.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="glass p-4 rounded-xl">
+                                <span class="block text-primary font-bold text-xl">3.54</span>
+                                <span class="text-xs uppercase tracking-wider text-slate-500">GPA</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl">
+                                <span class="block text-primary font-bold text-xl">10+</span>
+                                <span class="text-xs uppercase tracking-wider text-slate-500">Dự án hoàn thành</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-right">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary text-xl"><i class="bx bx-envelope"></i></div>
+                            <div>
+                                <h4 class="text-white font-medium">Email</h4>
+                                <p class="text-sm">nvtoan.1706@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary text-xl"><i class="bx bx-phone"></i></div>
+                            <div>
+                                <h4 class="text-white font-medium">Điện thoại</h4>
+                                <p class="text-sm">0932 822 075</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary text-xl"><i class="bx bx-map"></i></div>
+                            <div>
+                                <h4 class="text-white font-medium">Vị trí</h4>
+                                <p class="text-sm">Cần Thơ, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary text-xl"><i class="bx bx-book"></i></div>
+                            <div>
+                                <h4 class="text-white font-medium">Học vấn</h4>
+                                <p class="text-sm">Đại học Cần Thơ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- 5 -->
-            <div class="partner-box">
-              <img src="https://avatars.githubusercontent.com/u/95221114?v=4" alt="">
-              <h4>Le Nhat Minh</h4>
-              <p>Web Developer</p>
-              <a href="https://github.com/NhatMinh7823" target="_blank">@NhatMinh7823</a>
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-top">
+                    <h2 class="text-4xl font-bold text-white mb-4">
+                        Kỹ năng
+                        <span class="text-primary">Chuyên môn</span>
+                    </h2>
+                    <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Frontend -->
+                    <div class="glass p-8 rounded-2xl border border-white/5 hover:border-primary/50 transition-all reveal-bottom">
+                        <div class="text-4xl text-primary mb-6"><i class="bx bx-code-alt"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-4">Frontend Development</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>HTML5 / CSS3 / Modern JS</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>Tailwind CSS Expert</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>React Basic & Responsive Design</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Backend -->
+                    <div class="glass p-8 rounded-2xl border border-white/5 hover:border-primary/50 transition-all reveal-bottom" style="transition-delay: 100ms">
+                        <div class="text-4xl text-primary mb-6"><i class="bx bx-server"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-4">Backend Development</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>PHP & Laravel (Mastering)</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>MySQL / PostgreSQL</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>RESTful API Design</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Tools -->
+                    <div class="glass p-8 rounded-2xl border border-white/5 hover:border-primary/50 transition-all reveal-bottom" style="transition-delay: 200ms">
+                        <div class="text-4xl text-primary mb-6"><i class="bx bx-wrench"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-4">Tools & Others</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>Git / GitHub Workflow</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>UI/UX Design with Figma</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-sm">
+                                <i class="bx bx-check-circle text-primary"></i>
+                                <span>Problem Solving & Logical Thinking</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
 
-          </div>
-        </div>
+        <!-- Projects Section -->
+        <section id="projects" class="bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4 reveal-top">
+                    <div>
+                        <h2 class="text-4xl font-bold text-white mb-4">
+                            Dự án
+                            <span class="text-primary">Tiêu biểu</span>
+                        </h2>
+                        <div class="w-20 h-1.5 bg-primary rounded-full"></div>
+                    </div>
+                    <a href="https://github.com/nvtoancitctu" target="_blank" class="text-primary hover:underline flex items-center gap-2">
+                        Xem tất cả trên GitHub
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+                </div>
 
-        <!-- Next Button -->
-        <button class="btn-next"><i class="bx bx-chevron-right"></i></button>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="group relative bg-slate-800 rounded-2xl overflow-hidden border border-white/5 reveal-bottom">
+                        <div class="h-56 overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+                                alt="PyZa.io"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-duration-500"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <div class="flex gap-2 mb-3">
+                                <span class="text-[10px] bg-primary/20 text-primary px-2 py-1 rounded uppercase font-bold">Laravel</span>
+                                <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded uppercase font-bold">Ecommerce</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">PyZa.io Platform</h4>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Hệ thống thương mại điện tử toàn diện được xây dựng bằng Laravel, hỗ trợ thanh toán trực tuyến và quản lý kho.</p>
+                            <a href="https://github.com/nvtoancitctu/pyza.io" class="inline-flex items-center gap-2 text-white font-semibold group-hover:text-primary transition-colors">
+                                Code Source
+                                <i class="bx bx-link-external"></i>
+                            </a>
+                        </div>
+                    </div>
 
-      </div>
-    </section>
+                    <!-- Project 2 -->
+                    <div class="group relative bg-slate-800 rounded-2xl overflow-hidden border border-white/5 reveal-bottom" style="transition-delay: 100ms">
+                        <div class="h-56 overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800"
+                                alt="TMExam"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-duration-500"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <div class="flex gap-2 mb-3">
+                                <span class="text-[10px] bg-primary/20 text-primary px-2 py-1 rounded uppercase font-bold">PHP</span>
+                                <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded uppercase font-bold">Education</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">TMExam.vn</h4>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Hệ thống thi trắc nghiệm trực tuyến dành cho trường học, quản lý ngân hàng câu hỏi và chấm điểm tự động.</p>
+                            <a
+                                href="https://github.com/nvtoancitctu/online-examination-system"
+                                class="inline-flex items-center gap-2 text-white font-semibold group-hover:text-primary transition-colors"
+                            >
+                                Code Source
+                                <i class="bx bx-link-external"></i>
+                            </a>
+                        </div>
+                    </div>
 
-    <!-- ==========================================
-                  Contact Section
-    =========================================== -->
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span></h2>
+                    <!-- Project 3 -->
+                    <div class="group relative bg-slate-800 rounded-2xl overflow-hidden border border-white/5 reveal-bottom" style="transition-delay: 200ms">
+                        <div class="h-56 overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+                                alt="Ticket System"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-duration-500"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <div class="flex gap-2 mb-3">
+                                <span class="text-[10px] bg-primary/20 text-primary px-2 py-1 rounded uppercase font-bold">React</span>
+                                <span class="text-[10px] bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded uppercase font-bold">Management</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">Support Ticket System</h4>
+                            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Web app quản lý ticket hỗ trợ khách hàng, tối ưu hóa quy trình làm việc giữa khách và đội ngũ hỗ trợ.</p>
+                            <a href="https://github.com/nvtoancitctu/ticket-web" class="inline-flex items-center gap-2 text-white font-semibold group-hover:text-primary transition-colors">
+                                Code Source
+                                <i class="bx bx-link-external"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <form action="#">
-        <div class="input-box">
-          <input type="text" placeholder="Full Name" />
-          <input type="email" placeholder="Email Address" />
-        </div>
+        <!-- Partners Section (GitHub Contributors Style) -->
+        <section id="partners">
+            <div class="container mx-auto px-6 text-center reveal-top">
+                <h3 class="text-slate-500 uppercase tracking-[0.2em] font-bold text-xs mb-10">Trusted Technology & Collaborations</h3>
+                <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="h-10" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind" class="h-10" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP" class="h-12" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" class="h-10" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 invert" />
+                </div>
+            </div>
+        </section>
 
-        <div class="input-box">
-          <input type="number" placeholder="Mobile Number" />
-          <input type="text" placeholder="Email Subject" />
-        </div>
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-        ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
-      </form>
-    </section>
+        <!-- Contact Section -->
+        <section id="contact" class="relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl reveal-bottom">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 class="text-3xl font-bold text-white mb-6">
+                                Bắt đầu một
+                                <span class="text-primary">Dự án?</span>
+                            </h2>
+                            <p class="text-slate-400 mb-8">Tôi luôn sẵn lòng hợp tác và thảo luận về các ý tưởng mới. Đừng ngần ngại liên hệ!</p>
 
-    <!-- ==========================================
-                    Footer
-    =========================================== -->
-    <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright &copy; 2024 by HiTon (nvtoancitctu) - All Rights Reserved.</p>
-      </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary"><i class="bx bxs-envelope"></i></div>
+                                    <span>nvtoan.1706@gmail.com</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary"><i class="bx bxs-phone"></i></div>
+                                    <span>0932 822 075</span>
+                                </div>
+                            </div>
+                        </div>
 
-      <div class="footer-iconTop">
-        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
-      </div>
-    </footer>
+                        <form id="contact-form" class="space-y-4">
+                            <input
+                                type="text"
+                                placeholder="Tên của bạn"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-all text-white"
+                                required
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-all text-white"
+                                required
+                            />
+                            <textarea
+                                placeholder="Nội dung lời nhắn..."
+                                rows="4"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-all text-white"
+                                required
+                            ></textarea>
+                            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-primary/20">Gửi yêu cầu</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- ==========================================
-                  Scroll Reveal
-    =========================================== -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+        <!-- Footer -->
+        <footer class="py-12 border-t border-white/5">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
+                <div>
+                    <p>&copy; 2024 HiTon. Được xây dựng bằng đam mê & Laravel/Tailwind.</p>
+                </div>
+                <div class="flex space-x-6 text-xl">
+                    <a href="#" class="hover:text-primary"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="hover:text-primary"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="hover:text-primary"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="hover:text-primary"><i class="bx bxl-github"></i></a>
+                </div>
+                <a href="#home" class="w-10 h-10 bg-primary/20 flex items-center justify-center rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
+                    <i class="bx bx-up-arrow-alt text-2xl"></i>
+                </a>
+            </div>
+        </footer>
 
-    <!-- ==========================================
-                   Typed Js
-    =========================================== -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <!-- Scripts -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-    <!-- ==========================================
-                  Custom Js
-    =========================================== -->
-    <script src="main.js"></script>
-  </body>
+        <script>
+            // 1. Mobile Menu Toggle
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            menuBtn.onclick = () => {
+                mobileMenu.classList.toggle("hidden");
+            };
+            document.querySelectorAll(".mobile-link").forEach((link) => {
+                link.onclick = () => mobileMenu.classList.add("hidden");
+            });
+
+            // 2. Typed JS Effect
+            new Typed("#typed-text", {
+                strings: ["Laravel Developer", "Fullstack Developer", "Backend Specialist", "Tech Enthusiast"],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true,
+            });
+
+            // 3. Scroll Reveal Animations
+            const sr = ScrollReveal({
+                origin: "top",
+                distance: "60px",
+                duration: 2000,
+                delay: 200,
+                reset: false, // Animation runs once
+            });
+
+            sr.reveal(".reveal-top");
+            sr.reveal(".reveal-bottom", { origin: "bottom" });
+            sr.reveal(".reveal-left", { origin: "left" });
+            sr.reveal(".reveal-right", { origin: "right" });
+
+            // 4. Header Background Change on Scroll
+            window.onscroll = () => {
+                const header = document.getElementById("header");
+                if (window.scrollY > 50) {
+                    header.classList.add("bg-dark/95", "py-2");
+                    header.classList.remove("bg-transparent", "py-4");
+                } else {
+                    header.classList.remove("bg-dark/95", "py-2");
+                    header.classList.add("py-4");
+                }
+            };
+
+            // 5. Contact Form Simulation
+            document.getElementById("contact-form").onsubmit = (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector("button");
+                const originalText = btn.innerText;
+                btn.innerText = "Đang gửi...";
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    btn.innerText = "Cảm ơn bạn đã liên hệ!";
+                    btn.classList.replace("bg-primary", "bg-green-500");
+                    e.target.reset();
+                }, 1500);
+            };
+        </script>
+    </body>
 </html>
