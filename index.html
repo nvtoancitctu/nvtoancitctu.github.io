@@ -59,7 +59,7 @@
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="#" class="text-2xl font-bold text-white tracking-tighter">
                     Evan
-                    <span class="text-primary">Ton.</span>
+                    <span class="text-primary">Nguyen</span>
                 </a>
 
                 <!-- Desktop Menu -->
@@ -97,7 +97,7 @@
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="reveal-left">
                     <h3 class="text-primary font-semibold text-lg mb-2">Xin chào, tôi là</h3>
-                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">Evan T.Nguyen</h1>
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">Nguyễn Văn Toàn</h1>
                     <h2 class="text-2xl md:text-3xl font-medium mb-6">
                         Tôi là
                         <span id="typed-text" class="text-gradient"></span>
@@ -263,92 +263,117 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="bg-slate-900/50">
+        <!-- Projects Section -->
+        <section id="projects" class="bg-slate-900/50 py-20">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4 reveal-top">
-                    <div>
-                        <h2 class="text-4xl font-bold text-white mb-4">
-                            Dự án
-                            <span class="text-primary">Tiêu biểu</span>
-                        </h2>
-                        <div class="w-20 h-1.5 bg-primary rounded-full"></div>
-                    </div>
-                    <a href="https://github.com/nvtoancitctu" target="_blank" class="text-primary hover:underline flex items-center gap-2">
-                        Xem tất cả trên GitHub
-                        <i class="bx bx-right-arrow-alt"></i>
-                    </a>
+                <div class="mb-16">
+                    <h2 class="text-4xl font-bold text-white mb-4">
+                        Dự án
+                        <span class="text-primary">Đã Thực Hiện</span>
+                    </h2>
+                    <div class="w-20 h-1.5 bg-primary rounded-full"></div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="space-y-24">
                     <!-- Project 1 -->
-                    <div class="group relative bg-slate-800 rounded-2xl overflow-hidden border border-white/5 reveal-bottom">
-                        <div class="h-56 overflow-hidden">
-                            <img
-                                src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
-                                alt="PyZa.io"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-duration-500"
-                            />
-                        </div>
-                        <div class="p-6">
-                            <div class="flex gap-2 mb-3">
-                                <span class="text-[10px] bg-primary/20 text-primary px-2 py-1 rounded uppercase font-bold">Laravel</span>
-                                <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded uppercase font-bold">Ecommerce</span>
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- LEFT CONTENT -->
+                        <div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-primary/20 text-primary px-3 py-1 rounded uppercase font-bold">Laravel</span>
+                                <span class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded uppercase font-bold">Graduation Project</span>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2">PyZa.io Platform</h4>
-                            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Hệ thống thương mại điện tử toàn diện được xây dựng bằng Laravel, hỗ trợ thanh toán trực tuyến và quản lý kho.</p>
-                            <!-- <a href="https://github.com/nvtoancitctu/pyza.io" class="inline-flex items-center gap-2 text-white font-semibold group-hover:text-primary transition-colors">
-                                Code Source
+
+                            <h3 class="text-3xl font-bold text-white mb-4">Website Bán Pizza – Dự Án Tốt Nghiệp</h3>
+
+                            <p class="text-slate-400 mb-6 leading-relaxed">
+                                Xây dựng hệ thống thương mại điện tử bán pizza trực tuyến với đầy đủ chức năng: quản lý sản phẩm, giỏ hàng, thanh toán, quản lý đơn hàng và phân quyền admin. Ứng dụng
+                                tập trung vào trải nghiệm người dùng và tối ưu quy trình đặt hàng.
+                            </p>
+
+                            <ul class="text-slate-400 space-y-2 mb-6">
+                                <li>• Công nghệ: Laravel, MySQL, Bootstrap</li>
+                                <li>• Tích hợp thanh toán & quản lý tồn kho</li>
+                                <li>• Phân quyền Admin / User</li>
+                            </ul>
+
+                            <a href="https://www.youtube.com/watch?v=rlhfgAV7LCo" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                                Xem demo trên YouTube
                                 <i class="bx bx-link-external"></i>
-                            </a> -->
+                            </a>
+                        </div>
+
+                        <!-- RIGHT VIDEO -->
+                        <div class="w-full aspect-video">
+                            <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/rlhfgAV7LCo" title="Website Bán Pizza" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="group relative bg-slate-800 rounded-2xl overflow-hidden border border-white/5 reveal-bottom" style="transition-delay: 100ms">
-                        <div class="h-56 overflow-hidden">
-                            <img
-                                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800"
-                                alt="TMExam"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-duration-500"
-                            />
-                        </div>
-                        <div class="p-6">
-                            <div class="flex gap-2 mb-3">
-                                <span class="text-[10px] bg-primary/20 text-primary px-2 py-1 rounded uppercase font-bold">PHP</span>
-                                <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded uppercase font-bold">Education</span>
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- LEFT CONTENT -->
+                        <div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-green-500/20 text-green-400 px-3 py-1 rounded uppercase font-bold">PHP</span>
+                                <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded uppercase font-bold">Internship Project</span>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2">TMExam.vn</h4>
-                            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Hệ thống thi trắc nghiệm trực tuyến dành cho trường học, quản lý ngân hàng câu hỏi và chấm điểm tự động.</p>
-                            <!-- <a
-                                href="https://github.com/nvtoancitctu/online-examination-system"
-                                class="inline-flex items-center gap-2 text-white font-semibold group-hover:text-primary transition-colors"
-                            >
-                                Code Source
+
+                            <h3 class="text-3xl font-bold text-white mb-4">Hệ Thống Thi Trực Tuyến – Dự Án Thực Tập</h3>
+
+                            <p class="text-slate-400 mb-6 leading-relaxed">
+                                Phát triển hệ thống thi trắc nghiệm trực tuyến phục vụ trường học và trung tâm đào tạo. Hỗ trợ tạo đề thi, ngân hàng câu hỏi, trộn đề, chấm điểm tự động và thống kê kết
+                                quả.
+                            </p>
+
+                            <ul class="text-slate-400 space-y-2 mb-6">
+                                <li>• Công nghệ: PHP, MySQL, JavaScript</li>
+                                <li>• Chấm điểm tự động & xuất báo cáo</li>
+                                <li>• Phân quyền giáo viên / học sinh</li>
+                            </ul>
+
+                            <a href="https://www.youtube.com/watch?v=YwMWNS2VCVA" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                                Xem demo trên YouTube
                                 <i class="bx bx-link-external"></i>
-                            </a> -->
+                            </a>
+                        </div>
+
+                        <!-- RIGHT VIDEO -->
+                        <div class="w-full aspect-video">
+                            <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/YwMWNS2VCVA" title="Hệ Thống Thi Trực Tuyến" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
 
                     <!-- Project 3 -->
-                    <div class="group relative bg-slate-800 rounded-2xl overflow-hidden border border-white/5 reveal-bottom" style="transition-delay: 200ms">
-                        <div class="h-56 overflow-hidden">
-                            <img
-                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
-                                alt="Ticket System"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-duration-500"
-                            />
-                        </div>
-                        <div class="p-6">
-                            <div class="flex gap-2 mb-3">
-                                <span class="text-[10px] bg-primary/20 text-primary px-2 py-1 rounded uppercase font-bold">React</span>
-                                <span class="text-[10px] bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded uppercase font-bold">Management</span>
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- LEFT CONTENT -->
+                        <div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded uppercase font-bold">YDCC 2025</span>
+                                <span class="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded uppercase font-bold">Competition Project</span>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Support Ticket System</h4>
-                            <p class="text-slate-400 text-sm mb-4 line-clamp-2">Web app quản lý ticket hỗ trợ khách hàng, tối ưu hóa quy trình làm việc giữa khách và đội ngũ hỗ trợ.</p>
-                            <!-- <a href="https://github.com/nvtoancitctu/ticket-web" class="inline-flex items-center gap-2 text-white font-semibold group-hover:text-primary transition-colors">
-                                Code Source
+
+                            <h3 class="text-3xl font-bold text-white mb-4">Nền Tảng Chuyển Đổi Số Làng Nghề – YDCC 2025</h3>
+
+                            <p class="text-slate-400 mb-6 leading-relaxed">
+                                Dự án tham gia cuộc thi YDCC 2025, xây dựng nền tảng hỗ trợ các làng nghề truyền thống chuyển đổi số, quảng bá du lịch và nâng cao sinh kế người dân. Tích hợp công nghệ
+                                AI để đề xuất giải pháp phát triển và cảnh báo biến đổi khí hậu.
+                            </p>
+
+                            <ul class="text-slate-400 space-y-2 mb-6">
+                                <li>• Công nghệ: Laravel, AI API, MySQL</li>
+                                <li>• Hỗ trợ quảng bá sản phẩm & du lịch địa phương</li>
+                                <li>• Đề xuất & cảnh báo dựa trên dữ liệu môi trường</li>
+                            </ul>
+
+                            <a href="https://www.youtube.com/watch?v=7tpo6gPO89I" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                                Xem demo trên YouTube
                                 <i class="bx bx-link-external"></i>
-                            </a> -->
+                            </a>
+                        </div>
+
+                        <!-- RIGHT VIDEO -->
+                        <div class="w-full aspect-video">
+                            <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/7tpo6gPO89I" title="YDCC 2025 Project" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
