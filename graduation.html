@@ -32,20 +32,36 @@
                 }
             }
             .confetti {
-                position: absolute;
+                position: fixed; /* Đổi thành fixed để luôn nổi trên màn hình */
                 width: 8px;
                 height: 8px;
                 opacity: 0.6;
                 border-radius: 2px;
                 pointer-events: none;
+                z-index: 9999;
             }
-            /* Style cho logo chìm */
             .watermark-logo {
                 position: absolute;
                 opacity: 0.12;
                 filter: grayscale(100%) brightness(200%);
                 pointer-events: none;
                 z-index: 1;
+            }
+            /* Slider Animation */
+            .slide {
+                display: none;
+                animation: fade 1.5s;
+            }
+            .slide.active {
+                display: block;
+            }
+            @keyframes fade {
+                from {
+                    opacity: 0.4;
+                }
+                to {
+                    opacity: 1;
+                }
             }
         </style>
     </head>
@@ -56,7 +72,7 @@
             <img src="https://upload.wikimedia.org/wikipedia/vi/6/6c/Logo_Dai_hoc_Can_Tho.svg" alt="Logo CTU" class="watermark-logo w-64 md:w-96 -left-10 top-10 rotate-12" />
 
             <!-- Logo CICT chìm bên phải -->
-            <img src="https://upload.wikimedia.org/wikipedia/vi/6/6c/Logo_Dai_hoc_Can_Tho.svg" alt="Logo CICT" class="watermark-logo w-64 md:w-96 -right-10 bottom-10 -rotate-12" />
+            <img src="assets/cict.png" alt="Logo CICT" class="watermark-logo w-64 md:w-96 -right-10 bottom-10 -rotate-12" />
 
             <div class="relative z-10 text-center px-4">
                 <div class="mb-6 inline-block p-4 rounded-full bg-white/10 backdrop-blur-md animate-float border border-white/20">
@@ -126,7 +142,7 @@
                     <div class="grid gap-6">
                         <!-- Thời gian -->
                         <div class="flex items-center p-6 bg-white rounded-2xl shadow-sm border-l-4 border-yellow-400">
-                            <div class="bg-blue-50 p-4 rounded-xl mr-6 text-blue-700">
+                            <div class="bg-yellow-50 p-4 rounded-xl mr-6 text-yellow-700">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -134,7 +150,7 @@
                             <div>
                                 <p class="text-sm text-gray-500 uppercase font-bold mb-1">Thời gian chụp ảnh</p>
                                 <p class="text-xl font-bold text-gray-800">16:00 - 18:00</p>
-                                <p class="text-blue-700">Thứ 7, 18/04/2026</p>
+                                <p class="text-gray-500">Thứ 7, 18/04/2026</p>
                             </div>
                         </div>
 
@@ -173,14 +189,34 @@
                     </div>
                 </div>
 
-                <!-- Cột phải: Hình ảnh & Trang trí -->
-                <div class="relative group">
+                <!-- Cột phải: Slideshow Hình ảnh -->
+                <div class="relative group" id="slider-container">
                     <div class="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-yellow-400 rounded-[3rem] blur-2xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
-                    <div class="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] border-8 border-white">
-                        <div class="absolute inset-0 flex flex-col items-center justify-center p-12 text-center text-gray-400">
-                            <img src="assets/totnghiep.jpg" class="rounded-xl object-cover w-full h-full" alt="" />
-                            <!-- <p class="text-sm italic">Hãy thay thế bằng bức ảnh đẹp nhất của bạn mặc lễ phục tốt nghiệp</p> -->
+                    <div class="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] border-8 border-white" id="swipe-area">
+                        <!-- Danh sách ảnh (Toàn hãy thay URL ảnh thật vào đây nhé) -->
+                        <div class="slides-wrapper h-full w-full relative">
+                            <div class="slide active h-full w-full">
+                                <img id="slide-image" class="object-cover w-full h-full" alt="Graduation" />
+                            </div>
                         </div>
+
+                        <!-- Nút điều hướng -->
+                        <button
+                            onclick="prevSlide()"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all z-30 opacity-0 group-hover:opacity-100"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button
+                            onclick="nextSlide()"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all z-30 opacity-0 group-hover:opacity-100"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -200,34 +236,124 @@
                 </div>
             </div>
             <!-- Logo chìm dưới footer -->
-            <img src="https://cit.ctu.edu.vn/images/logo/logo-cict.png" class="absolute -bottom-10 -left-10 w-48 opacity-10" alt="" />
+            <img src="https://upload.wikimedia.org/wikipedia/vi/6/6c/Logo_Dai_hoc_Can_Tho.svg" class="absolute -bottom-0 left-0 w-48 opacity-10" alt="Dai hoc Can Tho" />
+            <img src="assets/cict.png" class="absolute -bottom-0 right-0 w-48 opacity-10" alt="Dai hoc Can Tho" />
         </footer>
 
         <script>
-            // Countdown
+            // --- Countdown Logic ---
             const targetDate = new Date("April 18, 2026 16:00:00").getTime();
-
             function updateCountdown() {
                 const now = new Date().getTime();
                 const diff = targetDate - now;
-
                 if (diff <= 0) return;
-
-                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-                document.getElementById("days").textContent = d.toString().padStart(2, "0");
-                document.getElementById("hours").textContent = h.toString().padStart(2, "0");
-                document.getElementById("minutes").textContent = m.toString().padStart(2, "0");
-                document.getElementById("seconds").textContent = s.toString().padStart(2, "0");
+                document.getElementById("days").textContent = Math.floor(diff / (1000 * 60 * 60 * 24))
+                    .toString()
+                    .padStart(2, "0");
+                document.getElementById("hours").textContent = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+                    .toString()
+                    .padStart(2, "0");
+                document.getElementById("minutes").textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+                    .toString()
+                    .padStart(2, "0");
+                document.getElementById("seconds").textContent = Math.floor((diff % (1000 * 60)) / 1000)
+                    .toString()
+                    .padStart(2, "0");
             }
-
             setInterval(updateCountdown, 1000);
             updateCountdown();
 
-            // Confetti effect
+            // --- Slideshow Logic ---
+            let slideIndex = 0;
+
+            const images = [
+                "assets/totnghiep.jpg", 
+                "assets/sv5tot.jpg", 
+                "assets/baoveluanvan.jpg", 
+                "assets/ydcc2025.jpg",
+            ];
+
+            const imgElement = document.getElementById("slide-image");
+            const dots = document.querySelectorAll(".dot");
+
+            let slideTimer;
+
+            imgElement.src = images[0];
+
+            function showSlides(n) {
+                if (n >= images.length) slideIndex = 0;
+                if (n < 0) slideIndex = images.length - 1;
+
+                // đổi ảnh
+                imgElement.src = images[slideIndex];
+
+                // update dots
+                dots.forEach((d) => {
+                    d.classList.remove("bg-white", "scale-125");
+                    d.classList.add("bg-white/50");
+                });
+
+                dots[slideIndex].classList.add("bg-white", "scale-125");
+                dots[slideIndex].classList.remove("bg-white/50");
+
+                resetTimer();
+            }
+
+            function nextSlide() {
+                slideIndex++;
+                showSlides(slideIndex);
+            }
+
+            function prevSlide() {
+                slideIndex--;
+                showSlides(slideIndex);
+            }
+
+            function currentSlide(n) {
+                slideIndex = n;
+                showSlides(slideIndex);
+            }
+
+            function resetTimer() {
+                clearInterval(slideTimer);
+                slideTimer = setInterval(nextSlide, 5000);
+            }
+
+            // --- Swipe Logic cho Mobile ---
+            let touchstartX = 0;
+            let touchendX = 0;
+            const swipeArea = document.getElementById("swipe-area");
+
+            swipeArea.addEventListener(
+                "touchstart",
+                (e) => {
+                    touchstartX = e.changedTouches[0].screenX;
+                },
+                false
+            );
+
+            swipeArea.addEventListener(
+                "touchend",
+                (e) => {
+                    touchendX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                },
+                false
+            );
+
+            function handleSwipe() {
+                if (touchendX < touchstartX - 50) nextSlide();
+                if (touchendX > touchstartX + 50) prevSlide();
+            }
+
+            // --- Khởi tạo ---
+            window.addEventListener("load", () => {
+                resetTimer();
+                spawnConfetti();
+                setInterval(spawnConfetti, 12000);
+            });
+
+            // --- Confetti Effect ---
             function spawnConfetti() {
                 const colors = ["#ffd700", "#ffffff", "#3b82f6", "#1e40af"];
                 for (let i = 0; i < 40; i++) {
@@ -237,27 +363,17 @@
                     c.style.top = "-10px";
                     c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                     document.body.appendChild(c);
-
                     const dur = Math.random() * 3 + 3;
                     c.animate(
                         [
                             { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
                             { transform: `translateY(100vh) rotate(${Math.random() * 1000}deg)`, opacity: 0 },
                         ],
-                        {
-                            duration: dur * 1000,
-                            easing: "cubic-bezier(0, .9, .6, 1)",
-                        }
+                        { duration: dur * 1000, easing: "cubic-bezier(0, .9, .6, 1)" }
                     );
-
                     setTimeout(() => c.remove(), dur * 1000);
                 }
             }
-
-            window.addEventListener("load", () => {
-                spawnConfetti();
-                setInterval(spawnConfetti, 12000);
-            });
         </script>
     </body>
 </html>
