@@ -88,7 +88,7 @@
                     <br />
                     <span class="font-semibold text-white/90">Trường CNTT & TT - Đại học Cần Thơ</span>
                 </p>
-                <a href="#details" class="group relative px-10 py-4 font-bold text-blue-900 transition-all duration-300">
+                <a href="javascript:void(0)" onclick="openModal()" class="group relative px-10 py-4 font-bold text-blue-900 transition-all duration-300">
                     <span
                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-1 translate-y-1 bg-yellow-400 group-hover:-translate-x-0 group-hover:-translate-y-0"
                     ></span>
@@ -97,6 +97,40 @@
                 </a>
             </div>
         </header>
+
+        <div id="inviteModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+    
+            <!-- Overlay -->
+            <div class="absolute inset-0" onclick="closeModal()"></div>
+        
+            <!-- Nội dung -->
+            <div class="relative z-10 flex justify-center items-center w-full h-full px-4">
+                
+                <img src="assets/thumoi.jpg" 
+                     class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg" 
+                     alt="Thư mời" />
+        
+                <!-- Nút đóng -->
+                <button onclick="closeModal()" 
+                    class="absolute top-5 right-5 text-white text-3xl font-bold">
+                    ×
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function openModal() {
+                const modal = document.getElementById("inviteModal");
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+            }
+        
+            function closeModal() {
+                const modal = document.getElementById("inviteModal");
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            }
+        </script>
 
         <!-- Countdown -->
         <section class="py-16 bg-white relative z-20 -mt-12 mx-4 max-w-5xl lg:mx-auto rounded-3xl shadow-2xl border border-gray-100">
@@ -266,12 +300,7 @@
             // --- Slideshow Logic ---
             let slideIndex = 0;
 
-            const images = [
-                "assets/totnghiep.jpg", 
-                "assets/sv5tot.jpg", 
-                "assets/baoveluanvan.jpg", 
-                "assets/ydcc2025.jpg",
-            ];
+            const images = ["assets/totnghiep.jpg", "assets/sv5tot.jpg", "assets/baoveluanvan.jpg", "assets/ydcc2025.jpg"];
 
             const imgElement = document.getElementById("slide-image");
             const dots = document.querySelectorAll(".dot");
