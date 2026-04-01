@@ -99,22 +99,15 @@
         </header>
 
         <div id="inviteModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-    
             <!-- Overlay -->
             <div class="absolute inset-0" onclick="closeModal()"></div>
-        
+
             <!-- Nội dung -->
             <div class="relative z-10 flex justify-center items-center w-full h-full px-4">
-                
-                <img src="assets/thumoi.jpg" 
-                     class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg" 
-                     alt="Thư mời" />
-        
+                <img src="assets/poster-tot-nghiep.png" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg" alt="Thư mời" />
+
                 <!-- Nút đóng -->
-                <button onclick="closeModal()" 
-                    class="absolute top-5 right-5 text-white text-3xl font-bold">
-                    ×
-                </button>
+                <button onclick="closeModal()" class="absolute top-5 right-5 text-white text-3xl font-bold">×</button>
             </div>
         </div>
 
@@ -124,7 +117,7 @@
                 modal.classList.remove("hidden");
                 modal.classList.add("flex");
             }
-        
+
             function closeModal() {
                 const modal = document.getElementById("inviteModal");
                 modal.classList.add("hidden");
@@ -197,8 +190,8 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-500 uppercase font-bold mb-1">Địa điểm</p>
-                                <p class="text-xl font-bold text-gray-800">Bên trái Hội trường Rùa</p>
-                                <p class="text-gray-500">Khu II, ĐH Cần Thơ</p>
+                                <a href="https://www.google.com/maps?q=10.029101,105.769591" target="_blank" class="text-xl font-bold text-gray-800 hover:underline">Bên trái Hội trường Rùa</a>
+                                <p class="text-gray-500">Khu II, Đại học Cần Thơ</p>
                             </div>
                         </div>
 
