@@ -1,0 +1,62 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.font-handwriting {
+    font-family: "Dancing Script", cursive;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #00558d 0%, #007bc3 100%);
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    opacity: 0.6;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.watermark-logo {
+    position: absolute;
+    opacity: 0.12;
+    filter: grayscale(100%) brightness(200%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.slide-fade {
+    animation: fade 0.8s ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

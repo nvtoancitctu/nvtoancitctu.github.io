@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portfolio</title>
+        <title>Evan Nguyen | Portfolio</title>
         <link rel="icon" href="assets/icon.jpg" type="image/jpg" />
 
         <!-- Tailwind CSS -->
@@ -57,10 +57,9 @@
         <!-- Header / Navbar -->
         <header class="fixed w-full top-0 z-50 transition-all duration-300 glass border-b border-white/5" id="header">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-white tracking-tighter">
-                    Evan
-                    <span class="text-primary">Nguyen</span>
-                </a>
+                
+                <!-- Logo -->
+                <img src="assets/icon.jpg" alt="Logo" class="w-16 h-16 bg-white rounded-full border-2 shadow-lg" />
 
                 <!-- Desktop Menu -->
                 <nav class="hidden md:flex space-x-8 font-medium">
@@ -73,7 +72,6 @@
                 </nav>
 
                 <div class="flex items-center space-x-4">
-                    <a href="#contact" class="hidden md:block bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full transition-all text-sm font-semibold">Hire Me</a>
                     <button id="menu-btn" class="md:hidden text-3xl text-white">
                         <i class="bx bx-menu"></i>
                     </button>
@@ -86,12 +84,13 @@
                 <a href="#about" class="mobile-link">About</a>
                 <a href="#skills" class="mobile-link">Skills</a>
                 <a href="#projects" class="mobile-link">Projects</a>
+                <a href="graduation.html" class="mobile-link">Graduation</a>
                 <a href="#contact" class="mobile-link">Contact</a>
             </div>
         </header>
 
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden mt-10">
             <div class="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
             <div class="absolute bottom-10 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px]"></div>
 
@@ -108,8 +107,8 @@
                         nghiệm người dùng tinh tế.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-xl font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/25">
-                            Xem dự án
+                        <a href="./assets/CV-EN.pdf" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-xl font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/25">
+                            Xem CV
                         </a>
                         <div class="flex items-center space-x-4 px-4 text-2xl">
                             <a href="https://github.com/nvtoancitctu" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-github"></i></a>
@@ -533,11 +532,11 @@
             window.onscroll = () => {
                 const header = document.getElementById("header");
                 if (window.scrollY > 50) {
-                    header.classList.add("bg-dark/95", "py-2");
-                    header.classList.remove("bg-transparent", "py-4");
+                    header.classList.add("bg-dark/95");
+                    header.classList.remove("bg-transparent");
                 } else {
-                    header.classList.remove("bg-dark/95", "py-2");
-                    header.classList.add("py-4");
+                    header.classList.remove("bg-dark/95");
+                    header.classList.add("bg-transparent");
                 }
             };
 
