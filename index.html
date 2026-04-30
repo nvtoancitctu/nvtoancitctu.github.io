@@ -6,13 +6,10 @@
         <title>Evan Nguyen | Portfolio</title>
         <link rel="icon" href="assets/icon.jpg" type="image/jpg" />
 
-        <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Boxicons -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="main.css" />
         <script>
             tailwind.config = {
                 darkMode: "class",
@@ -20,57 +17,36 @@
                     extend: {
                         colors: {
                             primary: "#6366f1",
-                            secondary: "#4f46e5",
-                            dark: "#0f172a",
-                            light: "#f8fafc",
+                            secondary: "#818cf8",
+                            dark: "#0a0f1a", // Deeper dark for better contrast
                         },
                         fontFamily: {
                             sans: ["Inter", "sans-serif"],
+                            heading: ["Plus Jakarta Sans", "sans-serif"],
                         },
                     },
                 },
             };
         </script>
-        <style>
-            .glass {
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .active-nav {
-                color: #6366f1;
-                border-bottom: 2px solid #6366f1;
-            }
-            .text-gradient {
-                background: linear-gradient(to right, #818cf8, #c084fc);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-            section {
-                padding-top: 5rem;
-                padding-bottom: 5rem;
-            }
-        </style>
     </head>
-    <body class="bg-dark text-slate-300 font-sans selection:bg-primary selection:text-white">
-        <!-- Header / Navbar -->
-        <header class="fixed w-full top-0 z-50 transition-all duration-300 glass border-b border-white/5" id="header">
+    <body class="bg-dark text-slate-400 font-sans selection:bg-primary/30 selection:text-white antialiased">
+        <!-- Header -->
+        <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/5 bg-dark/80 backdrop-blur-md" id="header">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                
                 <!-- Logo -->
-                <img src="assets/icon.jpg" alt="Logo" class="w-16 h-16 bg-white rounded-full border-2 shadow-lg" />
-
+                <div class="flex items-center gap-3">
+                    <img src="assets/icon.jpg" alt="Logo" class="w-10 h-10 rounded-full object-cover bg-white" />
+                    <span class="text-white font-bold tracking-tight text-lg hidden sm:block">Evan Nguyen</span>
+                </div>
                 <!-- Desktop Menu -->
-                <nav class="hidden md:flex space-x-8 font-medium">
-                    <a href="#home" class="hover:text-primary transition-colors">Home</a>
-                    <a href="#about" class="hover:text-primary transition-colors">About</a>
-                    <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
-                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-                    <a href="graduation.html" class="hover:text-primary transition-colors">Graduation</a>
-                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                <nav class="hidden md:flex items-center space-x-10 font-medium text-[13px] uppercase tracking-widest">
+                    <a href="#home" class="nav-link text-white transition-colors">Home</a>
+                    <a href="#about" class="nav-link hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="nav-link hover:text-white transition-colors">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-white transition-colors">Projects</a>
+                    <a href="graduation.html" class="nav-link hover:text-white transition-colors">Graduation</a>
+                    <a href="#contact" class="bg-white text-dark px-5 py-2.5 rounded-full hover:bg-primary hover:text-white transition-all transform active:scale-95">Let's Talk</a>
                 </nav>
-
                 <div class="flex items-center space-x-4">
                     <button id="menu-btn" class="md:hidden text-3xl text-white">
                         <i class="bx bx-menu"></i>
@@ -90,73 +66,84 @@
         </header>
 
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden mt-10">
-            <div class="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-10 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px]"></div>
-
-            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <section id="home" class="min-h-screen flex items-center pt-20">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal-left">
-                    <h3 class="text-primary font-semibold text-lg mb-2">Xin chào, tôi là</h3>
-                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">Nguyễn Văn Toàn</h1>
-                    <h2 class="text-2xl md:text-3xl font-medium mb-6">
-                        Tôi là
-                        <span id="typed-text" class="text-gradient"></span>
-                    </h2>
-                    <p class="text-slate-400 max-w-lg mb-8 text-lg leading-relaxed">
-                        Lập trình viên phát triển Web tại Việt Nam với thế mạnh về Laravel & Tailwind CSS. Tôi tập trung vào việc tạo ra các giải pháp phần mềm tối ưu, có khả năng mở rộng và trải
-                        nghiệm người dùng tinh tế.
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-[11px] font-bold uppercase tracking-widest text-primary mb-8">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        Open for new opportunities
+                    </div>
+                    <h1 class="text-7xl md:text-8xl font-extrabold text-white mb-6 leading-[0.9] tracking-tighter">
+                        Building
+                        <br />
+                        <span class="text-gradient">Digital Future.</span>
+                    </h1>
+                    <p class="text-slate-400 max-w-lg mb-10 text-xl leading-relaxed font-light">
+                        Full-stack Engineer specializing in
+                        <span class="text-white font-medium">Laravel Ecosystem</span>
+                        &
+                        <span class="text-white font-medium">Scalable Architectures</span>
+                        . Based in Vietnam.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="./assets/CV-EN.pdf" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-xl font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/25">
-                            Xem CV
+                    <div class="flex flex-wrap gap-5 items-center">
+                        <a href="https://github.com/nvtoancitctu" class="flex items-center gap-2 bg-white text-dark px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">
+                            <i class="bx bxl-github"></i>
+                            GitHub
                         </a>
-                        <div class="flex items-center space-x-4 px-4 text-2xl">
-                            <a href="https://github.com/nvtoancitctu" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-github"></i></a>
-                            <a href="https://linkedin.com/in/toan-nguyen-799a2034a" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-linkedin"></i></a>
-                            <a href="https://www.facebook.com/nvtoancitctu" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-facebook"></i></a>
-                            <a href="https://youtube.com/@evantnguyen1706" target="_blank" class="hover:text-primary transition-colors"><i class="bx bxl-youtube"></i></a>
+                        <div class="flex gap-4 text-2xl border-l border-white/10 pl-6 ml-2">
+                            <a href="https://linkedin.com/in/toan-nguyen-799a2034a" target="_blank" class="hover:text-primary transition-all hover:-translate-y-1"><i class="bx bxl-linkedin"></i></a>
+                            <a href="https://www.facebook.com/nvtoancitctu" target="_blank" class="hover:text-primary transition-all hover:-translate-y-1"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.instagram.com/ngvt.1706/" target="_blank" class="hover:text-primary transition-all hover:-translate-y-1"><i class="bx bxl-instagram"></i></a>
+                            <a href="/assets/CV-VN.pdf" target="_blank" class="hover:text-primary transition-all hover:-translate-y-1 flex items-center gap-1" title="CV Tiếng Việt">
+                                <img src="https://flagcdn.com/w20/vn.png" alt="Vietnamese" class="w-5 h-4 rounded-sm" />
+                            </a>
+                            <a href="/assets/CV-EN.pdf" target="_blank" class="hover:text-primary transition-all hover:-translate-y-1 flex items-center gap-1" title="CV English">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="English" class="w-5 h-4 rounded-sm" />
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="relative reveal-right flex justify-center">
-                    <div class="relative w-72 h-72 md:w-96 md:h-96">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-purple-500 rounded-3xl rotate-6 opacity-20"></div>
-                        <img src="assets/image/home1.png" alt="Profile" class="relative z-10 w-full h-full object-cover rounded-3xl border border-white/10 shadow-2xl glass" />
+                <div class="relative reveal-right flex justify-center lg:justify-end">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div class="relative w-80 h-80 md:w-[450px] md:h-[550px] overflow-hidden rounded-[2rem] border border-white/10 glass">
+                            <img src="assets/image/home1.png" alt="Profile" class="w-full h-full object-cover" />
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="bg-slate-900/50">
+        <!-- Refined About/Stats -->
+        <section id="about" class="py-32 relative">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16 reveal-top">
-                    <h2 class="text-4xl font-bold text-white mb-4">
-                        Về
-                        <span class="text-primary">Bản Thân</span>
-                    </h2>
-                    <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-16 items-start">
-                    <div class="space-y-6 reveal-left">
-                        <h3 class="text-2xl font-bold text-white">Xây dựng giải pháp từ tư duy logic</h3>
-                        <p class="text-slate-400 leading-relaxed">
-                            Tốt nghiệp Kỹ sư chuyên ngành Công nghệ Thông tin. Không chỉ dừng lại ở lý thuyết, tôi đã dành hàng ngàn giờ để thực hành với PHP và Laravel.
+                <div class="grid lg:grid-cols-12 gap-16 items-center">
+                    <div class="lg:col-span-7 space-y-8 reveal-left">
+                        <h2 class="text-5xl font-bold text-white tracking-tighter">
+                            I combine code with
+                            <br />
+                            <span class="text-primary">Engineering Logic.</span>
+                        </h2>
+                        <p class="text-lg text-slate-400 leading-relaxed max-w-2xl">
+                            With a 3.54 GPA in Computer Science, I don't just build websites; I engineer robust backends. My focus is on PHP/Laravel performance, REST API optimization, and clean
+                            architectural patterns.
                         </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="glass p-4 rounded-xl">
-                                <span class="block text-primary font-bold text-xl">3.54</span>
-                                <span class="text-xs uppercase tracking-wider text-slate-500">GPA</span>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                            <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="text-3xl font-bold text-white mb-1">3.54</div>
+                                <div class="text-[10px] uppercase tracking-widest font-bold text-slate-500">Academic GPA</div>
                             </div>
-                            <div class="glass p-4 rounded-xl">
-                                <span class="block text-primary font-bold text-xl">10+</span>
-                                <span class="text-xs uppercase tracking-wider text-slate-500">Dự án hoàn thành</span>
+                            <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="text-3xl font-bold text-white mb-1">10+</div>
+                                <div class="text-[10px] uppercase tracking-widest font-bold text-slate-500">Live Projects</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-right">
+                    <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-right">
                         <div class="flex items-start space-x-4">
                             <div class="bg-primary/10 p-3 rounded-lg text-primary text-xl"><i class="bx bx-envelope"></i></div>
                             <div>
@@ -291,118 +278,113 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <!-- Projects Section -->
-        <section id="projects" class="bg-slate-900/50 py-20">
+        <!-- Projects Section - Refined Cards -->
+        <section id="projects" class="bg-dark/50 py-20 border-y border-white/5">
             <div class="container mx-auto px-6">
                 <div class="mb-16">
                     <h2 class="text-4xl font-bold text-white mb-4">
-                        Dự án
-                        <span class="text-primary">Đã Thực Hiện</span>
+                        Selected
+                        <span class="text-primary">Works</span>
                     </h2>
-                    <div class="w-20 h-1.5 bg-primary rounded-full"></div>
+                    <div class="w-12 h-1.5 bg-primary rounded-full"></div>
                 </div>
 
-                <div class="space-y-24">
+                <div class="grid gap-20">
                     <!-- Project 1 -->
-                    <div class="grid lg:grid-cols-2 gap-12 items-center">
-                        <!-- LEFT CONTENT -->
-                        <div>
-                            <div class="flex gap-2 mb-4">
-                                <span class="text-xs bg-primary/20 text-primary px-3 py-1 rounded uppercase font-bold">Laravel</span>
-                                <span class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded uppercase font-bold">Graduation Project</span>
+                    <div class="group grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-md border border-primary/20 uppercase font-bold tracking-widest">Laravel</span>
+                                <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded-md border border-red-500/20 uppercase font-bold tracking-widest">Graduation</span>
                             </div>
+                            <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Website Bán Pizza</h3>
+                            <p class="text-slate-400 mb-8 text-lg leading-relaxed">System implementation focused on high-performance ordering workflows and admin inventory management.</p>
 
-                            <h3 class="text-3xl font-bold text-white mb-4">Website Bán Pizza – Dự Án Tốt Nghiệp</h3>
-
-                            <p class="text-slate-400 mb-6 leading-relaxed">
-                                Xây dựng hệ thống thương mại điện tử bán pizza trực tuyến với đầy đủ chức năng: quản lý sản phẩm, giỏ hàng, thanh toán, quản lý đơn hàng và phân quyền admin. Ứng dụng
-                                tập trung vào trải nghiệm người dùng và tối ưu quy trình đặt hàng.
-                            </p>
-
-                            <ul class="text-slate-400 space-y-2 mb-6">
-                                <li>• Công nghệ: Laravel, MySQL, Bootstrap</li>
-                                <li>• Tích hợp thanh toán & quản lý tồn kho</li>
-                                <li>• Phân quyền Admin / User</li>
-                            </ul>
-
-                            <a href="https://www.youtube.com/watch?v=rlhfgAV7LCo" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-                                Xem demo trên YouTube
-                                <i class="bx bx-link-external"></i>
-                            </a>
+                            <div class="flex items-center gap-6">
+                                <a
+                                    href="https://www.youtube.com/watch?v=rlhfgAV7LCo"
+                                    target="_blank"
+                                    class="flex items-center gap-2 bg-white text-dark px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all"
+                                >
+                                    <i class="bx bxl-youtube"></i>
+                                    Demo
+                                </a>
+                                <a href="#" class="flex items-center gap-2 text-white hover:text-primary transition-colors font-medium">
+                                    <i class="bx bxl-github text-xl"></i>
+                                    Source Code
+                                </a>
+                            </div>
                         </div>
-
-                        <!-- RIGHT VIDEO -->
-                        <div class="w-full aspect-video">
-                            <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/rlhfgAV7LCo" title="Website Bán Pizza" frameborder="0" allowfullscreen></iframe>
+                        <div class="order-1 lg:order-2 relative group-hover:scale-[1.02] transition-transform duration-500">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
+                            <iframe class="w-full aspect-video rounded-2xl relative glass" src="https://www.youtube.com/embed/rlhfgAV7LCo" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="grid lg:grid-cols-2 gap-12 items-center">
-                        <!-- LEFT CONTENT -->
-                        <div>
-                            <div class="flex gap-2 mb-4">
-                                <span class="text-xs bg-green-500/20 text-green-400 px-3 py-1 rounded uppercase font-bold">PHP</span>
-                                <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded uppercase font-bold">Internship Project</span>
+                    <div class="group grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded-md border border-green-500/20 uppercase font-bold tracking-widest">PHP</span>
+                                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded-md border border-blue-500/20 uppercase font-bold tracking-widest">Internship</span>
                             </div>
-
-                            <h3 class="text-3xl font-bold text-white mb-4">Hệ Thống Thi Trực Tuyến – Dự Án Thực Tập</h3>
-
-                            <p class="text-slate-400 mb-6 leading-relaxed">
+                            <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Hệ Thống Thi Trực Tuyến</h3>
+                            <p class="text-slate-400 mb-8 text-lg leading-relaxed">
                                 Phát triển hệ thống thi trắc nghiệm trực tuyến phục vụ trường học và trung tâm đào tạo. Hỗ trợ tạo đề thi, ngân hàng câu hỏi, trộn đề, chấm điểm tự động và thống kê kết
                                 quả.
                             </p>
 
-                            <ul class="text-slate-400 space-y-2 mb-6">
-                                <li>• Công nghệ: PHP, MySQL, JavaScript</li>
-                                <li>• Chấm điểm tự động & xuất báo cáo</li>
-                                <li>• Phân quyền giáo viên / học sinh</li>
-                            </ul>
-
-                            <a href="https://www.youtube.com/watch?v=YwMWNS2VCVA" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-                                Xem demo trên YouTube
-                                <i class="bx bx-link-external"></i>
-                            </a>
+                            <div class="flex items-center gap-6">
+                                <a
+                                    href="https://www.youtube.com/watch?v=YwMWNS2VCVA"
+                                    target="_blank"
+                                    class="flex items-center gap-2 bg-white text-dark px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all"
+                                >
+                                    <i class="bx bxl-youtube"></i>
+                                    Demo
+                                </a>
+                                <a href="#" class="flex items-center gap-2 text-white hover:text-primary transition-colors font-medium">
+                                    <i class="bx bxl-github text-xl"></i>
+                                    Source Code
+                                </a>
+                            </div>
                         </div>
-
-                        <!-- RIGHT VIDEO -->
-                        <div class="w-full aspect-video">
-                            <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/YwMWNS2VCVA" title="Hệ Thống Thi Trực Tuyến" frameborder="0" allowfullscreen></iframe>
+                        <div class="order-1 lg:order-2 relative group-hover:scale-[1.02] transition-transform duration-500">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
+                            <iframe class="w-full aspect-video rounded-2xl relative glass" src="https://www.youtube.com/embed/YwMWNS2VCVA" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
 
                     <!-- Project 3 -->
-                    <div class="grid lg:grid-cols-2 gap-12 items-center">
-                        <!-- LEFT CONTENT -->
-                        <div>
-                            <div class="flex gap-2 mb-4">
-                                <span class="text-xs bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded uppercase font-bold">YDCC 2025</span>
-                                <span class="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded uppercase font-bold">Competition Project</span>
+                    <div class="group grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-2 py-1 rounded-md border border-yellow-500/20 uppercase font-bold tracking-widest">YDCC 2025</span>
+                                <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-1 rounded-md border border-purple-500/20 uppercase font-bold tracking-widest">Competition</span>
                             </div>
-
-                            <h3 class="text-3xl font-bold text-white mb-4">Nền Tảng Chuyển Đổi Số Làng Nghề – YDCC 2025</h3>
-
-                            <p class="text-slate-400 mb-6 leading-relaxed">
-                                Dự án tham gia cuộc thi YDCC 2025, xây dựng nền tảng hỗ trợ các làng nghề truyền thống chuyển đổi số, quảng bá du lịch và nâng cao sinh kế người dân. Tích hợp công nghệ
-                                AI để đề xuất giải pháp phát triển và cảnh báo biến đổi khí hậu.
+                            <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Nền Tảng Chuyển Đổi Số Làng Nghề</h3>
+                            <p class="text-slate-400 mb-8 text-lg leading-relaxed">
+                                Dự án tham gia cuộc thi YDCC 2025, xây dựng nền tảng hỗ trợ các làng nghề truyền thống chuyển đổi số, quảng bá du lịch và nâng cao sinh kế người dân.
                             </p>
 
-                            <ul class="text-slate-400 space-y-2 mb-6">
-                                <li>• Công nghệ: Laravel, AI API, MySQL</li>
-                                <li>• Hỗ trợ quảng bá sản phẩm & du lịch địa phương</li>
-                                <li>• Đề xuất & cảnh báo dựa trên dữ liệu môi trường</li>
-                            </ul>
-
-                            <a href="https://www.youtube.com/watch?v=7tpo6gPO89I" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-                                Xem demo trên YouTube
-                                <i class="bx bx-link-external"></i>
-                            </a>
+                            <div class="flex items-center gap-6">
+                                <a
+                                    href="https://www.youtube.com/watch?v=7tpo6gPO89I"
+                                    target="_blank"
+                                    class="flex items-center gap-2 bg-white text-dark px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all"
+                                >
+                                    <i class="bx bxl-youtube"></i>
+                                    Demo
+                                </a>
+                                <a href="#" class="flex items-center gap-2 text-white hover:text-primary transition-colors font-medium">
+                                    <i class="bx bxl-github text-xl"></i>
+                                    Source Code
+                                </a>
+                            </div>
                         </div>
-
-                        <!-- RIGHT VIDEO -->
-                        <div class="w-full aspect-video">
-                            <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/7tpo6gPO89I" title="YDCC 2025 Project" frameborder="0" allowfullscreen></iframe>
+                        <div class="order-1 lg:order-2 relative group-hover:scale-[1.02] transition-transform duration-500">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
+                            <iframe class="w-full aspect-video rounded-2xl relative glass" src="https://www.youtube.com/embed/7tpo6gPO89I" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

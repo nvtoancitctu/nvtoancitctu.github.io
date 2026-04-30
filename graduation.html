@@ -7,45 +7,11 @@
         <link rel="icon" href="assets/icon.jpg" type="image/jpg" />
         <script src="https://cdn.tailwindcss.com"></script>
         <!-- Thêm Font Space Grotesk cho cảm giác công nghệ -->
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;500;600;700&family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="./graduation.css" />
-        <style>
-            :root {
-                --tech-blue: #007bc3;
-                --tech-cyan: #00f2ff;
-            }
-            body {
-                font-family: 'Space Grotesk', 'Quicksand', sans-serif;
-                background-color: #020617; /* Nền tối sâu */
-            }
-            .tech-grid {
-                background-image: linear-gradient(rgba(0, 123, 195, 0.05) 1px, transparent 1px),
-                                  linear-gradient(90deg, rgba(0, 123, 195, 0.05) 1px, transparent 1px);
-                background-size: 30px 30px;
-            }
-            .terminal-window {
-                background: rgba(15, 23, 42, 0.8);
-                backdrop-filter: blur(12px);
-                border: 1px solid rgba(0, 242, 255, 0.2);
-                box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
-            }
-            .code-accent {
-                font-family: 'Fira Code', monospace;
-                color: var(--tech-cyan);
-            }
-            .scan-line {
-                width: 100%;
-                height: 2px;
-                background: rgba(0, 242, 255, 0.2);
-                position: absolute;
-                top: 0;
-                animation: scan 4s linear infinite;
-            }
-            @keyframes scan {
-                0% { top: 0; }
-                100% { top: 100%; }
-            }
-        </style>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;500;600;700&family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
     </head>
     <body class="text-slate-200 tech-grid">
         <!-- Hero Section -->
@@ -60,18 +26,21 @@
                 <div class="mb-8 inline-block p-6 rounded-2xl terminal-window animate-float">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                        />
                     </svg>
                 </div>
 
-                <div class="code-accent text-sm md:text-base tracking-[0.4em] mb-4 uppercase">
-                    &lt;System.Status: Graduated /&gt;
-                </div>
-                
+                <div class="code-accent text-sm md:text-base tracking-[0.4em] mb-4 uppercase">&lt;System.Status: Graduated /&gt;</div>
+
                 <h1 class="text-6xl md:text-9xl font-handwriting mb-6 drop-shadow-2xl text-white">Nguyễn Văn Toàn</h1>
-                
+
                 <div class="h-1 w-32 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto mb-8"></div>
-                
+
                 <div class="max-w-2xl mx-auto mb-12 space-y-2">
                     <p class="text-xl md:text-3xl font-light tracking-wide">Công nghệ Thông tin - Khóa 47</p>
                     <p class="text-cyan-400/80 code-accent text-sm md:text-lg">Trường Công nghệ Thông tin và Truyền thông - Đại học Cần Thơ</p>
@@ -87,7 +56,7 @@
                     <h3 class="code-accent uppercase tracking-widest text-sm font-bold">Countdown_to_Ceremony</h3>
                     <div class="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/30"></div>
                 </div>
-                
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
                     <div class="relative group">
                         <span id="days" class="text-5xl md:text-7xl font-bold text-white block">00</span>
@@ -113,11 +82,16 @@
         <section id="details" class="py-32 px-6">
             <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
                 <div class="space-y-10">
-                    <h3 class="text-5xl font-handwriting text-white leading-tight">Bạn đồng hành ơi, <br><span class="text-cyan-400">đến chung vui với Toàn nhé!</span></h3>
+                    <h3 class="text-5xl font-handwriting text-white leading-tight">
+                        Bạn đồng hành ơi,
+                        <br />
+                        <span class="text-cyan-400">đến chung vui với Toàn nhé!</span>
+                    </h3>
                     <p class="text-slate-400 text-lg leading-relaxed italic border-l-2 border-cyan-500/50 pl-6">
-                        "Sau những dòng code chạy lỗi, những đêm debug xuyên màn đêm, cuối cùng 'dự án' 4,5 năm đại học của mình cũng đã được Release thành công. Rất mong được gặp bạn tại lễ tốt nghiệp này!"
+                        "Sau những dòng code chạy lỗi, những đêm debug xuyên màn đêm, cuối cùng 'dự án' 4,5 năm đại học của mình cũng đã được Release thành công. Rất mong được gặp bạn tại lễ tốt
+                        nghiệp này!"
                     </p>
-                    
+
                     <div class="grid gap-6">
                         <!-- Time Card -->
                         <div class="group terminal-window p-6 rounded-2xl transition-all hover:border-cyan-400/50">
@@ -158,14 +132,17 @@
                             <div class="flex items-center">
                                 <div class="bg-green-500/10 p-4 rounded-xl mr-6 text-green-400 group-hover:scale-110 transition-transform">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                        />
                                     </svg>
                                 </div>
                                 <div>
                                     <p class="text-[10px] text-green-500 uppercase font-bold mb-1">Contact_Me</p>
-                                    <a href="tel:+84932822075" class="text-xl font-bold text-white hover:text-green-400 transition-colors">
-                                        0932 822 075
-                                    </a>
+                                    <a href="tel:+84932822075" class="text-xl font-bold text-white hover:text-green-400 transition-colors">0932 822 075</a>
                                     <p class="text-slate-400">Alo cho mình khi bạn đến nhé!</p>
                                 </div>
                             </div>
@@ -177,7 +154,7 @@
                 <div class="relative group" id="slider-container">
                     <!-- Tech background glow -->
                     <div class="absolute -inset-10 bg-blue-600 rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition duration-1000"></div>
-                    
+
                     <div class="terminal-window rounded-[2rem] overflow-hidden shadow-2xl relative" id="swipe-area">
                         <!-- Top bar máy tính -->
                         <div class="h-8 bg-slate-800/50 flex items-center px-4 gap-2 border-bottom border-white/5">
@@ -189,18 +166,33 @@
 
                         <div class="slides-wrapper aspect-[4/5] relative">
                             <div class="scan-line z-20"></div>
-                            <img id="slide-image" class="object-cover w-full h-full slide-fade" alt="Graduation" onerror="this.src = 'https://via.placeholder.com/800x1000/0f172a/00f2ff?text=Loading+Memories...'" />
+                            <img
+                                id="slide-image"
+                                class="object-cover w-full h-full slide-fade"
+                                alt="Graduation"
+                                onerror="this.src = 'https://via.placeholder.com/800x1000/0f172a/00f2ff?text=Loading+Memories...'"
+                            />
                         </div>
 
                         <!-- Dots -->
                         <div id="dots-container" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-30"></div>
 
                         <!-- Điều hướng -->
-                        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-cyan-500 text-white p-3 rounded-xl backdrop-blur-sm transition-all z-30 opacity-0 group-hover:opacity-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        <button
+                            onclick="prevSlide()"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-cyan-500 text-white p-3 rounded-xl backdrop-blur-sm transition-all z-30 opacity-0 group-hover:opacity-100"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
                         </button>
-                        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-cyan-500 text-white p-3 rounded-xl backdrop-blur-sm transition-all z-30 opacity-0 group-hover:opacity-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        <button
+                            onclick="nextSlide()"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-cyan-500 text-white p-3 rounded-xl backdrop-blur-sm transition-all z-30 opacity-0 group-hover:opacity-100"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -213,7 +205,7 @@
             <div class="relative z-10 px-6">
                 <h4 class="text-4xl font-handwriting mb-6 text-white">Hẹn gặp bạn tại buổi lễ !</h4>
                 <p class="text-slate-400 mx-auto mb-10">Lễ tốt nghiệp sẽ thêm rạng rỡ khi có những người bạn đồng nghiệp, đồng code cùng mình.</p>
-                
+
                 <div class="flex justify-center gap-6 text-cyan-500/50 text-[10px] code-accent uppercase tracking-widest">
                     <span class="hover:text-cyan-400 transition-colors cursor-default">#TotNghiep_2026</span>
                     <span>•</span>
@@ -224,6 +216,6 @@
             </div>
         </footer>
 
-        <script src="./graduation.js"></script>
+        <script src="./style.js"></script>
     </body>
 </html>
